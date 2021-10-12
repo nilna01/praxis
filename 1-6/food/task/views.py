@@ -4,9 +4,9 @@ from . import models
 
 # Create your views here.
 def index (request) :
-    if request.POST :
-        models.Task.objects.create(item=request.POST['item'])
-        return redirect('/')
+    # if request.POST :
+    #     models.Task.objects.create(item=request.POST['item'])
+    #     return redirect('/')
 
     tasks = models.Task.objects.all()
     return render(request, 'index.html', {
@@ -20,3 +20,16 @@ def rincian(request, id) :
     models.Task.objects.filter(pk=id).first()
     return redirect('/')        
 
+def tambah(request):
+    if request.POST:
+        models.Task.objects.create(
+            makanan=request.POST['makanan'],
+            harga=request.POST['harga'],
+            jumlah=request.POST['jumlah']
+
+        )
+        return redirect('/')
+
+    data=models.Task.objects.all()
+    return render (request , 'tambah.html', {
+        'data': data,})

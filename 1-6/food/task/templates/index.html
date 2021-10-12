@@ -8,38 +8,51 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-    <h1>MAKANAN</h1>
-    <form action="" method="POST">
-        {% csrf_token %} 
+    <a type="button" class="btn btn-primary" href="tambah/">tambah data</a>
+    
+    <table class="table">
+        <thead>
+          <tr>
+            <!-- <th scope="col">nomor antrian</th> -->
+            <!-- <th scope="col">NO</th> -->
+            <th scope="col">MAKANAN</th>
+            <!-- <th scope="col">MINUMAN</th> -->
+            <th scope="col">jumlah</th>
+            <th scope="col">harga</th>
+            <th scope="col">action</th>
+            
+          </tr>
+          <tr>
+              {% for d in data%}
+          </tr>
 
-        <p>
-            <label>NAMA</label><input type="text" name="item">
-        </p>
-        <p>
-            <label>jenis 
-            </label><select name="jenis">
-                <option value="basah">basah</option>
-                <option value="kering">kering</option>
-            </select>
-        </p>
-        <p>
-            <label>jumlah</label><input type="number" name="jumlah">
-        </p>
-        <p>
-            <label>HARGA</label><input type="teks" name="harga">
-        </p>
-        
-        <button type="submit">Simpan</button>
 
-        <h1>MINUMAN</h1>
-        <p>
-            <label>NAMA</label><input type="text" name="item">
+            
+          <tr>
+              <td>{{d.makanan}}</td>
+              <td>{{d.jumlah}}</td>
+              <td>{{d.harga}}</td>
+          
+
+          <!-- <td class="text-capitalize">{{d.makanan}}</td>  -->
+            
+                    <td>
+                        <a type="button"class="btn btn-success" href="{{d.id}}/detail">Rincian</a>
+                        <a type="button"class="btn btn-warning" href="#">Edit</a>
+                        <a type="button"class="btn btn-danger" href="{{d.id}}/delete">Hapus</a>
+                    </td>
+                </tr>
+          {% endfor %}
+
+      </table>
+        <!-- <h1>MINUMAN</h1>
+        <p>NAMA</label><input type="text" name="item">
         </p>
         <p>
             <label>jenis</label><select name="jenis">
-                <option value="panas">panas</option>
                 <option value="dingin">dingin</option>
-            </select>   
+                <option value="hangat">hangat</option>
+            </select>    
         </p>
         <p>
             <label>jumlah</label><input type="number" name="jumlah">
@@ -48,35 +61,27 @@
             <label>HARGA</label><input type="text" name="harga">
         </p>
 
-        <button type="submit">Simpan</button>
-        <br>
-    </form>
+        <button type="submit">Simpan</button> -->
 
   <div>
-        <table class='table' table-hover mt-3>
+        <!-- <table class='table' table-hover mt-3>
             <thead>
                 <br>
                 {% for d in data %}
                 
                 <tr>
                     
-                    <th>{{forloop.counter}}</th>
+                    
             
             
 
-                    <td class="text-capitalize">{{d.item}}</td> 
-            
-                    <td>
-                        <a type="button"class="btn btn-success" href="{{d.id}}/detail">Rincian</a>
-                        <a type="button"class="btn btn-warning" href="#">Edit</a>
-                        <a type="button"class="btn btn-danger" href="{{d.id}}/delete">Hapus</a>
-                    </td>
+                    
                     
                 </tr>
                 {% endfor %}
             </thead>
             
-        </table>
+        </table> -->
   </div>
     
     

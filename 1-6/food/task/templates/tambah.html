@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>MAKANAN</h1>
+    <form action="" method="POST">
+        {% csrf_token %} 
+
+        <p>
+            <label>NAMA</label><input type="text" name="makanan">
+        </p>
+
+        <!-- <p>
+            <label>jenis 
+            </label><select name="jenis">
+                <option value="basah">basah</option>
+                <option value="kering">kering</option>
+            </select>
+        </p> -->
+        <p>
+            <label>jumlah</label><input type="number" name="jumlah">
+        </p>
+        <p>
+            <label>HARGA</label><input type="teks" name="harga">
+        </p>
+        
+        <button type="submit" class="btn btn-primary mt-1">tambah</button>
+</body>
+</html>
