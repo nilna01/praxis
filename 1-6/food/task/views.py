@@ -17,19 +17,32 @@ def delete(request, id) :
     return redirect('/')
 
 def rincian(request, id) :
-    models.Task.objects.filter(pk=id).first()
-    return redirect('/')        
+    tasks=models.Task.objects.filter(pk=id).first()
+    return render(request, 'detail.html', {
+        'data' : tasks,
+    })  
 
 def tambah(request):
     if request.POST:
         models.Task.objects.create(
             makanan=request.POST['makanan'],
             harga=request.POST['harga'],
-            jumlah=request.POST['jumlah']
+            jumlah=request.POST['jumlah'])
 
-        )
         return redirect('/')
-
     data=models.Task.objects.all()
-    return render (request , 'tambah.html', {
+    return render (request, 'tambah.html', {
         'data': data,})
+
+def update (request,id):
+    if request.POST:
+        models.Task.objects.filter(pk=id). update(
+            makanan=request.POST['makanan'],
+            harga=request.POST['harga'],
+            jumlah=request.POST['jumlah'])
+            
+        return redirect('/')
+    data=models.Task.objects.all()
+    return render (request, 'update.html', {
+        'data': data,})
+

@@ -13,12 +13,10 @@
     <table class="table">
         <thead>
           <tr>
-            <!-- <th scope="col">nomor antrian</th> -->
-            <!-- <th scope="col">NO</th> -->
+            
             <th scope="col">MAKANAN</th>
-            <!-- <th scope="col">MINUMAN</th> -->
-            <th scope="col">jumlah</th>
-            <th scope="col">harga</th>
+            <th scope="col">Jumlah</th>
+            <th scope="col">Harga</th>
             <th scope="col">action</th>
             
           </tr>
@@ -37,8 +35,8 @@
           <!-- <td class="text-capitalize">{{d.makanan}}</td>  -->
             
                     <td>
-                        <a type="button"class="btn btn-success" href="{{d.id}}/detail">Rincian</a>
-                        <a type="button"class="btn btn-warning" href="#">Edit</a>
+                        <a type="button"class="btn btn-success" href="{{d.id}}/detail?">Rincian</a>
+                        <a type="button"class="btn btn-warning" href="{{d.id}}/update">Edit</a>
                         <a type="button"class="btn btn-danger" href="{{d.id}}/delete">Hapus</a>
                     </td>
                 </tr>
