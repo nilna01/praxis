@@ -7,14 +7,17 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>MAKANAN</h1>
+    <h1>Pesanan </h1>
     <form action="" method="POST">
         {% csrf_token %} 
 
         <p>
-            <label>NAMA</label><input type="text" name="makanan">
+            <label>MAKANAN</label><input type="text" name="makanan">
         </p>
-        
+        <p>
+            <label>MINUMAN</label><input type="text" name="minuman">
+        </p>
+
         <p>
             <label>jumlah</label><input type="number" name="jumlah">
         </p>

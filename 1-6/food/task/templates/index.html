@@ -15,10 +15,11 @@
           <tr>
             
             <th scope="col">MAKANAN</th>
+            <th scope="col">MINUMAN</th>
             <th scope="col">Jumlah</th>
             <th scope="col">Harga</th>
             <th scope="col">action</th>
-            
+             
           </tr>
           <tr>
               {% for d in data%}
@@ -28,6 +29,7 @@
             
           <tr>
               <td>{{d.makanan}}</td>
+              <td>{{d.minuman}}</td>
               <td>{{d.jumlah}}</td>
               <td>{{d.harga}}</td>
           
@@ -51,8 +53,8 @@
                 <option value="dingin">dingin</option>
                 <option value="hangat">hangat</option>
             </select>    
-        </p>
-        <p>
+        </p> -->
+        <!-- <p>
             <label>jumlah</label><input type="number" name="jumlah">
         </p>
         <p>
