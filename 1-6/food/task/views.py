@@ -8,9 +8,10 @@ def index (request) :
     #     models.Task.objects.create(item=request.POST['item'])
     #     return redirect('/')
 
-    tasks = models.Task.objects.all()
+    data = models.Task.objects.all()
+    print (data)
     return render(request, 'index.html', {
-    'data' : tasks,
+    'data': data,
     }) 
 def delete(request, id) :
     models.Task.objects.filter(pk=id).delete()
@@ -26,9 +27,12 @@ def tambah(request):
     if request.POST:
         models.Task.objects.create(
             makanan=request.POST['makanan'],
+            jenismakanan=request.POST['jenismakanan'],
+            jumlahmakanan=request.POST['jumlahmakanan'],
             minuman=request.POST['minuman'],
-            harga=request.POST['harga'],
-            jumlah=request.POST['jumlah'])
+            jenisminuman=request.POST['jenisminuman'],
+            jumlahminuman=request.POST['jumlahminuman'],
+            harga=request.POST['harga'])
 
         return redirect('/')
     data=models.Task.objects.all()
@@ -39,9 +43,12 @@ def update (request,id):
     if request.POST:
         models.Task.objects.filter(pk=id). update(
             makanan=request.POST['makanan'],
+            jenismakanan=request.POST['jenismakanan'],
+            jumlahmakanan=request.POST['jumlahmakanan'],
             minuman=request.POST['minuman'],
-            harga=request.POST['harga'],
-            jumlah=request.POST['jumlah'])
+            jenisminuman=request.POST['jenisminuman'],
+            jumlahminuman=request.POST['jumlahminuman'],
+            harga=request.POST['harga'])
             
         return redirect('/')
     data=models.Task.objects.all()

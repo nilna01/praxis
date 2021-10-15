@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Pesanan </h1>
+    <h1>MENU</h1>
     <form action="" method="POST">
         {% csrf_token %} 
 
@@ -15,11 +15,29 @@
             <label>MAKANAN</label><input type="text" name="makanan">
         </p>
         <p>
+            <label>jenis makanan</label><select name="jenismakanan">
+                <option value="basah">basah</option>
+                <option value="kering">kering</option>
+                <option value="goreng">goreng</option>
+                <option value="rebus">rebus</option>
+                <option value="bakar">bakar</option>
+
+            </select>
+        </p>
+        <p>
+            <label>jumlah makanan</label><input type="number" name="jumlahmakanan">
+        </p>
+        <p>
             <label>MINUMAN</label><input type="text" name="minuman">
         </p>
-
         <p>
-            <label>jumlah</label><input type="number" name="jumlah">
+            <label>jenis minuman</label><select name="jenisminuman">
+                <option value="hangat">hangat</option>
+                <option value="dingin">dingin</option>
+            </select>
+        </p>
+        <p>
+            <label>jumlah minuman</label><input type="number" name="jumlahminuman">
         </p>
         <p>
             <label>HARGA</label><input type="teks" name="harga">
